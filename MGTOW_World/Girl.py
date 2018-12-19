@@ -7,7 +7,7 @@ from Government import Government
 
 Girl_breast_cup_dict = {"":0,"A":20,"B":40,"C":60,"D":80,"DD":100,"E":60,"F":30}
 
-Girl_age_dict = {18:100,19:100,20:95,21:95,22:90,23:90,24:85,25:85,26:80,27:80,28:75,29:70}
+Girl_age_dict = {18:100,19:100,20:95,21:95,22:90,23:90,24:85,25:85,26:80,27:80,28:75,29:70,30:60,31:50,32:45,33:40,34:35,35:30,36:25,37:20,38:15,39:10,40:1,41:1,42:1}
 
 Girl_work_dict = {"allimony":1200,
                   "secretary":1800,
@@ -43,7 +43,7 @@ class Girl:
                  breast_cup,
                  ethnicity,
                  weight,height,
-                 inkomen,
+                 income,
                  work=None,
                  diploma=None):
 
@@ -57,14 +57,21 @@ class Girl:
                    if x in Girl_worthless_degrees:
                        self.diploma.append(x)
             # If not list, append directly to list
+            elif diploma in Girl_worthless_degrees:
+                self.diploma.append(diploma)
             else:
-                if diploma in Girl_worthless_degrees:
-                    self.diploma.append(diploma)
+                print("NOTICE: Diploma attribute wrong format in constructor, setting to empty list")
         if work == None:
             self.work = []
             #self.work += "Allimony"
-        self.depth = "{}{}".format(len(self.diploma) * 30000,"$")
-        self.inkomen = inkomen
+        #self.depth = "{}{}".format(len(self.diploma) * Girl_worthless_degrees.get(self.diploma),"$")
+        self.depth = "{}{}".format(int(Girl.depth),"$")
+        if self.diploma != []:
+            depth = 0
+            for d in self.diploma:
+                depth += Girl_worthless_degrees.get(d)
+            self.depth = "{}{}".format(int(depth),"$")
+        self.income = income
         self.name = str(name)
         self.age = int(age)
         self.cock_mileage = int(boyfriend_count) * self.age
@@ -87,24 +94,39 @@ class Girl:
             if self.SMV <= 0:
                 self.SMV = 0
 
+    #def transmit_std(self):
+
     # functies, zoals leach, divorce_rape, behaal_useless_diploma, baar kind, false_alligation, abortion_plegen, work_out
     def fuck_chad(self,alpha,amount: int):
         #alphas = ["Tyrone", "Chad", "Badboy mo"]
         if isinstance(alpha, Alpha):
+            if self.cock_mileage > 1000:
+                print("Wow you dirty whore, if you keep this pace, you will reach maximum thothery and will need to freeze your eggs!""\n")
             self.cock_mileage += amount
             self.virgin = bool(0)
             time.sleep(2)
             print("Ah yes... you fucked " + alpha.name , str(amount) + " times, you dirty slut!")
             time.sleep(1)
             print("Congratulations " + self.name + "," + " your cock_milage has inceased with " + str(amount) + ", and is now at " + str(self.cock_mileage) + "!""")
-            if self.cock_mileage > 1000:
-                print("Wow you dirty whore, if you keep this pace, you will reach maximum thothery and will need to freeze your eggs!""\n")
         elif isinstance(alpha, Girl):
             print(self.name + " does not fuck with girls!" + "\n" + "Only Alpha guys who can shower me with money and cum please!""\n")
 #        elif isinstance(alpha, Kech):
 #            print(self.name + " does not fuck with THOTS!" + "\n" + "Only Alpha guys who can shower me with money and cum please!")
-        elif self.age < 30 and isinstance(alpha, Beta):
-            print("Are you kidding me? " + self.name + " does not fuck with betas, sorry!" "\n" + "Maybe, just maybe, I will come to " + alpha.name + " later to marry him when I'm done having fun :)!""\n")
+        elif isinstance(alpha, Beta):
+            if self.age >= 35:
+                print("Alright, you can have a piece of this ass. ""\n" "I'm a swinger and have hit the wall anyways!")
+                time.sleep(1)
+                if self.cock_mileage > 1000:
+                    print("Wow you dirty whore, if you keep this pace, you will reach maximum thothery and will need to freeze your eggs!""\n")
+                    time.sleep(1)
+                self.cock_mileage += amount
+                self.virgin = bool(0)
+                time.sleep(2)
+                print("Ah yes... you fucked " + alpha.name , str(amount) + " times, you dirty slut!")
+                time.sleep(1)
+                print("Congratulations " + self.name + "," + " your cock_milage has inceased with " + str(amount) + ", and is now at " + str(self.cock_mileage) + "!")
+            else:
+                print("Are you kidding me? " + self.name + " does not fuck with betas, sorry!" "\n" + "Maybe, just maybe, I will come to " + alpha.name + " later to marry him when I'm done having fun :)!""\n")
 
     #def leach(self,Guy):
 

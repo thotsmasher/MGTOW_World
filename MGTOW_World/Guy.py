@@ -34,7 +34,7 @@ Guy_ethnicities = ["Caucasian",
                     "Latina"]
 
 class Guy:
-    def __init__(self,name,age,virgin,ethnicity,weight,height,ripped,girlfriend_count,inkomen,work=None,diploma=None):
+    def __init__(self,name,age,virgin,ethnicity,weight,height,ripped,girlfriend_count,income,work=None,diploma=None):
         if diploma == None:
             self.diploma = []
         else:
@@ -43,7 +43,7 @@ class Guy:
         if work == None:
             self.work = []
         self.depth = "{}{}".format(len(self.diploma) * 30000,"$")
-        self.inkomen = inkomen
+        self.income = income
         self.name = str(name)
         self.age = int(age)
         self.ripped = bool(ripped)
