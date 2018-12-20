@@ -1,7 +1,7 @@
 from Girl import Girl
 
 #class kech, extends girl
-class Kech(Girl):
+class Thot(Girl):
     #static attributs, wat heeft een kech zowiezo?
     pass
     #constructor = girl + extra

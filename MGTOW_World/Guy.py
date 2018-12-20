@@ -34,17 +34,38 @@ Guy_ethnicities = ["Caucasian",
                     "Latina"]
 
 class Guy:
-    def __init__(self,name,age,virgin,ethnicity,weight,height,ripped,girlfriend_count,income,work=None,diploma=None):
+
+    depth = 0
+    wealth = 0
+    bank_account = 0
+
+    def __init__(self,name,age,virgin,ethnicity,weight,height,ripped,girlfriend_count,income,red_pill_knowledge,work=None,diploma=None):
         if diploma == None:
             self.diploma = []
         else:
             self.diploma = []
-            self.diploma += diploma
+            # Check if diploma_attribute is a list
+            if isinstance(diploma,(list,)):
+                for x in diploma:
+                   if x in Guy_worthless_degrees or x in Guy_worth_degrees:
+                       self.diploma.append(x)
+            # If not list, append directly to list
+            elif diploma in Guy_worthless_degrees or diploma in Guy_worth_degrees:
+                self.diploma.append(diploma)
+            else:
+                print("NOTICE: Diploma attribute wrong format in constructor, setting to empty list")
         if work == None:
             self.work = []
-        self.depth = "{}{}".format(len(self.diploma) * 30000,"$")
+        self.depth = "{}{}".format(int(Guy.depth),"$")
+        if self.diploma != []:
+            depth = 0
+            for d in self.diploma:
+                depth += Guy_worthless_degrees.get(d)
+            self.depth = "{}{}".format(int(depth),"$")
         self.income = income
         self.name = str(name)
+        if age > 50:
+            print("Older than 50 years?" )
         self.age = int(age)
         self.ripped = bool(ripped)
         self.virgin = bool(virgin)
@@ -52,6 +73,7 @@ class Guy:
         self.ethnicity = str(ethnicity)
         self.weight = "{}{}".format(int(weight),"KG")
         self.height = "{} {}".format(int(height),"Centimeters")
+        self.red_pill_knowledge = red_pill_knowledge
     #     #self.bank_account = self.work
     #     self.married = bool(0)
     #     self.hotness = "{}{}".format((breast_cup_dict[self.breast_cup] + age_dict[self.age]) / 2,"%")
@@ -60,3 +82,11 @@ class Guy:
     # instance specifieke attributen
 
     # functies, zoals trouwen, divorcen, werk een dag, uitgaan, hoer_neuken,
+    # set_income
+    # set_weight
+    # set_girlfriend_count
+    # set_virginity
+    # set_diplomas
+    # set_work
+    # set_depth
+    # set_red_pill_knowledge

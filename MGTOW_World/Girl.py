@@ -1,6 +1,6 @@
 import time
 from Guy import Guy
-#from Kech import Kech
+#from Thot import Thot
 from Alpha import Alpha
 from Beta import Beta
 from Government import Government
@@ -96,18 +96,29 @@ class Girl:
 
     #def transmit_std(self):
 
-    # functies, zoals leach, divorce_rape, behaal_useless_diploma, baar kind, false_alligation, abortion_plegen, work_out
+    # functions like: leach, divorce_rape, get_useless_diploma, bare_child, false_allegation, abortion, work_out, monkey_branch
+    def fuck(self,alpha,amount: int):
+        if self.cock_mileage > 1000:
+            print("Wow you dirty whore, if you keep this pace, you will reach maximum thothery and will need to freeze your eggs!""\n")
+        self.cock_mileage += amount
+        self.virgin = bool(0)
+        time.sleep(2)
+        print("Ah yes... you fucked " + alpha.name , str(amount) + " times, you dirty slut!")
+        time.sleep(1)
+        print("Congratulations " + self.name + "," + " your cock_milage has inceased with " + str(amount) + ", and is now at " + str(self.cock_mileage) + "!""")
+
     def fuck_chad(self,alpha,amount: int):
         #alphas = ["Tyrone", "Chad", "Badboy mo"]
         if isinstance(alpha, Alpha):
-            if self.cock_mileage > 1000:
-                print("Wow you dirty whore, if you keep this pace, you will reach maximum thothery and will need to freeze your eggs!""\n")
-            self.cock_mileage += amount
-            self.virgin = bool(0)
-            time.sleep(2)
-            print("Ah yes... you fucked " + alpha.name , str(amount) + " times, you dirty slut!")
-            time.sleep(1)
-            print("Congratulations " + self.name + "," + " your cock_milage has inceased with " + str(amount) + ", and is now at " + str(self.cock_mileage) + "!""")
+            self.fuck(alpha,amount)
+            # if self.cock_mileage > 1000:
+            #     print("Wow you dirty whore, if you keep this pace, you will reach maximum thothery and will need to freeze your eggs!""\n")
+            # self.cock_mileage += amount
+            # self.virgin = bool(0)
+            # time.sleep(2)
+            # print("Ah yes... you fucked " + alpha.name , str(amount) + " times, you dirty slut!")
+            # time.sleep(1)
+            # print("Congratulations " + self.name + "," + " your cock_milage has inceased with " + str(amount) + ", and is now at " + str(self.cock_mileage) + "!""")
         elif isinstance(alpha, Girl):
             print(self.name + " does not fuck with girls!" + "\n" + "Only Alpha guys who can shower me with money and cum please!""\n")
 #        elif isinstance(alpha, Kech):
@@ -116,17 +127,21 @@ class Girl:
             if self.age >= 35:
                 print("Alright, you can have a piece of this ass. ""\n" "I'm a swinger and have hit the wall anyways!")
                 time.sleep(1)
-                if self.cock_mileage > 1000:
-                    print("Wow you dirty whore, if you keep this pace, you will reach maximum thothery and will need to freeze your eggs!""\n")
-                    time.sleep(1)
-                self.cock_mileage += amount
-                self.virgin = bool(0)
-                time.sleep(2)
-                print("Ah yes... you fucked " + alpha.name , str(amount) + " times, you dirty slut!")
-                time.sleep(1)
-                print("Congratulations " + self.name + "," + " your cock_milage has inceased with " + str(amount) + ", and is now at " + str(self.cock_mileage) + "!")
+                self.fuck(alpha,amount)
+                # if self.cock_mileage > 1000:
+                #     print("Wow you dirty whore, if you keep this pace, you will reach maximum thothery and will need to freeze your eggs!""\n")
+                #     time.sleep(1)
+                # self.cock_mileage += amount
+                # self.virgin = bool(0)
+                # time.sleep(2)
+                # print("Ah yes... you fucked " + alpha.name , str(amount) + " times, you dirty slut!")
+                # time.sleep(1)
+                # print("Congratulations " + self.name + "," + " your cock_milage has inceased with " + str(amount) + ", and is now at " + str(self.cock_mileage) + "!")
             else:
                 print("Are you kidding me? " + self.name + " does not fuck with betas, sorry!" "\n" + "Maybe, just maybe, I will come to " + alpha.name + " later to marry him when I'm done having fun :)!""\n")
 
-    #def leach(self,Guy):
+    # def leach(self,Guy):
 
+    # def set_income
+    # def set_diplomas
+    # def set_bank_account
