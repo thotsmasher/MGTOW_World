@@ -52,8 +52,6 @@ class Guy:
             # If not list, append directly to list
             elif diploma in Guy_worthless_degrees or diploma in Guy_worth_degrees:
                 self.diploma.append(diploma)
-            else:
-                print("NOTICE: Diploma attribute wrong format in constructor, setting to empty list")
         if work == None:
             self.work = []
         self.depth = "{}{}".format(int(Guy.depth),"$")
@@ -64,8 +62,6 @@ class Guy:
             self.depth = "{}{}".format(int(depth),"$")
         self.income = income
         self.name = str(name)
-        if age > 50:
-            print("Older than 50 years?" )
         self.age = int(age)
         self.ripped = bool(ripped)
         self.virgin = bool(virgin)

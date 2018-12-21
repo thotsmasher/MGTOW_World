@@ -65,20 +65,32 @@ def main():
                 print_slow("\n""Invalid option, please try again.""\n")
         except ValueError:
             print_slow("\n""Invalid option, please try again.""\n")
-    print_slow("Choose wisely....")
+    #print_slow("Choose wisely....")
     while True:
         try:
-            # choice_2 = int(input("\n""Options:""\n""\n""[1]: New game""\n""[2]: Load game""\n"))
-            # if choice_2 == 2:
-            #   <database sql code> <Creer character met die attributen van sql query>
+            choice_2 = int(input("\n""Options:""\n""\n""[1]: New game""\n""[2]: Load game""\n"))
+            red_pill_knowledge = 0
+            if choice_2 == 2:
+                character = Beta
+            #   <database sql code> <Create character with attributes loaded from database>
             #   break
-            choice_3 = int(input("\n""Options:""\n""\n""[1]: Blue_pill""\n""[2]: Purple_pill""\n""[3]: Red_pill"))
+            print_slow("Choose wisely....""\n")
+            choice_3 = int(input("\n""Options:""\n""\n""[1]: Blue_pill""\n""[2]: Purple_pill""\n""[3]: Red_pill""\n"))
             if choice_3 == 1:
                 print_slow("\n""You have chosen the blue_pill...""\n""Choose your character:""\n")
                 choice_4 = int(input("\n""Options:""\n""\n""[1]: Ertugrul""\n""[2]: Soufian""\n""[3]: Kanye West""\n"))
                 if choice_4 == 1:
-                    b = Beta("Ertugrul",25,bool(1),"Arabian",85,180,bool(0),0,1200,0,"Service_desk Employee","MBO_Niveau_4_ICT")
-                    print_slow("You have selected " + b.name +  " as your blue pill beta cuck main character...")
+                    character = Beta("Ertugrul",25,bool(1),"Arabian",85,180,bool(0),0,1200,0,"Service_desk Employee","MBO_Niveau_4_ICT")
+                    print_slow("You have selected " + character.name +  " as your blue pill beta cuck main character...")
+            elif choice_3 == 2:
+                if red_pill_knowledge >= 50:
+                    print_slow("\n""You have chosen the purple_pill...""\n""Choose your character:""\n")
+                    choice_5 = int(input("\n""Options:""\n""\n""[1]: Owen Cook (Tyler)""\n""[2]: BoBo (The Ultimate Seat Pedophile Girl Destroyer)""\n""[3]: Jordan Peterson""\n"))
+                    if choice_5 == 1:
+                        character = Guy("Owen Cook",30,bool(0),"Caucasian",75,170,bool(0),100,3000,60,"Pick up Artist",None)
+                        print_slow("You have selected " + character.name +  " as your purple pill main character...")
+                else:
+                    print_slow("It seems that you don't have enough red pill knowledge yet to select the purple pill...""\n""Please try again...""\n")
         except ValueError:
             print_slow("Wrong Value")
 
